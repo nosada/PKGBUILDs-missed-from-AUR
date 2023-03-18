@@ -1,0 +1,32 @@
+# Contributor: Hanabishi
+
+_name=papirus-icon-theme
+pkgname=${_name}-stripped
+provides=("${_name}")
+conflicts=("${_name}")
+pkgver=20230301
+pkgrel=1
+pkgdesc="Papirus icon theme, stripped to only base (default + dark) variations."
+arch=('any')
+url="https://github.com/PapirusDevelopmentTeam/${_name}"
+license=("GPL3")
+options=('!strip' '!emptydirs')
+
+_snapshot="${_name}-${pkgver}"
+_archive="${_snapshot}.tar.gz"
+
+source=("${_archive}::${url}/archive/${pkgver}.tar.gz")
+noextract=("${_archive}")
+sha256sums=('9e56bd9b04768b7aa415c82f430f5e76e854c63ba4eeba59a39b9a0ad9d000c1')
+
+package() {
+  local icons="${pkgdir}/usr/share/icons"
+  local licenses="${pkgdir}/usr/share/licenses/${pkgname}"
+  install -dm755 "${icons}" "${licenses}"
+
+  tar -C "${icons}" --strip-components=1 --no-same-owner --no-same-permissions \
+    -xf "${_archive}" "${_snapshot}/Papirus" "${_snapshot}/Papirus-Dark"
+
+  tar -C "${licenses}" --strip-components=1 --no-same-owner --no-same-permissions \
+    -xf "${_archive}" "${_snapshot}/LICENSE"
+}
