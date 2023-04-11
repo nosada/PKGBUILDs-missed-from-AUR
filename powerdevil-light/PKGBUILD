@@ -11,7 +11,7 @@ _name=powerdevil
 pkgname=${_name}-light
 conflicts=("${_name}")
 provides=("${_name}")
-pkgver=5.27.3
+pkgver=5.27.4
 pkgrel=1
 pkgdesc='Manages the power consumption settings of a Plasma Shell (stripped from unnecessary dependencies)'
 arch=(x86_64)
@@ -23,7 +23,7 @@ optdepends=('kinfocenter: for the Energy Information KCM'
             'power-profiles-daemon: power profiles support')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$pkgver/$_name-$pkgver.tar.xz{,.sig})
-sha256sums=('c807d4ddfa173a7bf2b6d6476eec21d6359386d7e0b7f99fe75595674ab56c99'
+sha256sums=('a70e673638dfdd4157332b262bf101eae0cc1ac73ffb22225bd6012483a3153e'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
