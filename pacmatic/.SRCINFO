@@ -1,0 +1,22 @@
+pkgbase = pacmatic
+	pkgdesc = A pacman wrapper to avoid bricking your system and such other surprises.
+	pkgver = 20150126
+	pkgrel = 7
+	url = http://kmkeen.com/pacmatic/
+	arch = any
+	license = GPL
+	depends = pacman
+	depends = bash
+	depends = expac
+	depends = pacman-contrib
+	optdepends = vim: for vimdiff
+	optdepends = python-html2text: for prettier news
+	optdepends = fakeroot: for cron-pacmatic script
+	source = http://kmkeen.com/pacmatic/pacmatic-20150126.tar.gz
+	source = _pacmatic
+	source = pacmatic.patch
+	sha256sums = 4f06bd31b575ba0c0df5e579e4c707778eeb387cc57d44f50ac6ffed7eadf445
+	sha256sums = b2ea7ea7b0a45cd21c7631f6320cdafaac7bb4d8d3d32f2a6a9415bddedd0b40
+	sha256sums = 96a323a29124068d7552785b25a5f56ea7292e3331a23aadb53dcc6166795c23
+
+pkgname = pacmatic
