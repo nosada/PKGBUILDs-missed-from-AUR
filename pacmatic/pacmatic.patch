@@ -1,0 +1,10 @@
+--- pacmatic.orig	2015-01-27 01:28:50.000000000 +0900
++++ pacmatic	2022-05-08 13:29:13.117273251 +0900
+@@ -54,7 +54,7 @@
+ {
+     # make xml less unfriendly to grep
+     # escape \n | remove literal \n | opening tags get a line
+-    curl --connect-timeout 10 -s -o - "$rss_feed" | \
++    curl --location --connect-timeout 10 -s -o - "$rss_feed" | \
+     sed "s/^/\\\\n/g" | tr -s "\r\n" " " | sed -r "s/<[^\/]/\n&/g"
+ }

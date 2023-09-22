@@ -2,3 +2,5 @@
 !.gitignore
 !.SRCINFO
 !PKGBUILD
+!_pacmatic
+!pacmatic.patch
