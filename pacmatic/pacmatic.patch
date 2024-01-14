@@ -1,5 +1,14 @@
 --- pacmatic.orig	2015-01-27 01:28:50.000000000 +0900
-+++ pacmatic	2022-05-08 13:29:13.117273251 +0900
++++ pacmatic	2024-01-15 00:06:59.213095175 +0900
+@@ -2,7 +2,7 @@
+ 
+ # configs
+ warn_time="${warn_time:-86400}"  # seconds
+-rss_feed="${rss_feed:-https://www.archlinux.org/feeds/news/}"
++rss_feed="${rss_feed:-https://archlinux.org/feeds/news/}"
+ mail_list="${mail_list:-https://lists.archlinux.org/pipermail/arch-general/$(LC_TIME=C printf '%(%Y-%B)T\n' -1).txt.gz}"
+ log_file="${log_file:-/var/log/arch-news.log}"
+ pacman_log="${pacman_log:-/var/log/pacman.log}"
 @@ -54,7 +54,7 @@
  {
      # make xml less unfriendly to grep
@@ -8,3 +17,4 @@
 +    curl --location --connect-timeout 10 -s -o - "$rss_feed" | \
      sed "s/^/\\\\n/g" | tr -s "\r\n" " " | sed -r "s/<[^\/]/\n&/g"
  }
+ 
