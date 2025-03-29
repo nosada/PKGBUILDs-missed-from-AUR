@@ -4,7 +4,7 @@ _name=papirus-icon-theme
 pkgname=${_name}-stripped
 provides=("${_name}")
 conflicts=("${_name}")
-pkgver=20240501
+pkgver=20250201
 pkgrel=1
 pkgdesc="Papirus icon theme, stripped to only base (default + dark) variations."
 arch=('any')
@@ -17,7 +17,7 @@ _archive="${_snapshot}.tar.gz"
 
 source=("${_archive}::${url}/archive/${pkgver}.tar.gz")
 noextract=("${_archive}")
-sha256sums=('c12a64963639afffc5c5425c4d8fd09e9d5510bbc4c408a1fec9a1d617c5089b')
+sha256sums=('01a7a07293db9e22437b96fae9d7fd8dad74c33c5460af8c86227973cb3a9846')
 
 package() {
   local icons="${pkgdir}/usr/share/icons"
